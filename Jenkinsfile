@@ -7,6 +7,18 @@ pipeline{
               echo "git checkout"
            
            }
+      stage("Test")
+       {
+           steps {
+              echo "Test"
+           
+           }
+      stage("Build")
+       {
+           steps {
+              echo "Build"
+           
+           }   
        }
     }
 }
