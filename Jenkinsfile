@@ -1,27 +1,12 @@
-pipeline{
-   agent any
-   stages{
-      stage("Git Checkout")
-       {
-           steps {
-              echo "git checkout"
-           
-           }
-       } 
-      stage("Test")
-       {
-           steps {
-              echo "Test"
-           
-           }
-       } 
-      stage("Build")
-       {
-           steps {
-              echo "Build"
-           
-           }
-       }
-       }
+pipeline {
+    agent any
+    stages{
+        stage("Git Checkout") {
+            step{
+                scripts {
+                   git branch: 'main', credentialsId: 'gitcredentials', url: 'https://github.com/NitinMnb/mrdevops.git'
+                }
+            }
+        }
     }
-
+}
